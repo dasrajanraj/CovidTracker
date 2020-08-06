@@ -9,15 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class HomePage implements OnInit {
   private countriesList : [] = []
+  private total_obj : {} = {}
+  
   filteredCountry:string =''
   private fetch : Observable<[]>;
+  private fetchTotal : Observable<any>;
 
   constructor( private reqServier : RequestService) {}
   ngOnInit(){
       this.fetch = this.reqServier.onFetch();
-      this.fetch.subscribe((data)=>{
+      this.fetch.subscribe((data)=>{       
         this.countriesList = data      
-      })
+      })     
   }
   
 }

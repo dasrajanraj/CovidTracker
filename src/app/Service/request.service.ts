@@ -12,4 +12,10 @@ export class RequestService {
     return this.http.get("https://api.covid19api.com/countries")
     .pipe(map((res:any)=>res))
   }
+
+  onFetchCountry(countryCode){
+    return this.http.get(`https://api.thevirustracker.com/free-api?countryTotal=${countryCode}`)
+    .pipe(map((res:any)=> res['countrydata'][0]))
+  }
+
 }
