@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button default-href></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{info.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-title>total_active_cases</ion-title>
+    <ion-note slot="end">{{details.total_active_cases}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_cases</ion-title>
+    <ion-note slot="end">{{details.total_cases}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_danger_rank</ion-title>
+    <ion-note slot="end">{{details.total_danger_rank}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_deaths</ion-title>
+    <ion-note slot="end">{{details.total_deaths}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_new_cases_today</ion-title>
+    <ion-note slot="end">{{details.total_new_cases_today}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_new_deaths_today</ion-title>
+    <ion-note slot="end">{{details.total_new_deaths_today}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-title>total_recovered</ion-title>
+    <ion-note slot="end">{{details.total_recovered}}</ion-note>
+  </ion-item>  <ion-item>
+    <ion-title>total_serious_cases</ion-title>
+    <ion-note slot="end">{{details.total_serious_cases}}</ion-note>
+  </ion-item>  <ion-item>
+    <ion-title>total_unresolved</ion-title>
+    <ion-note slot="end">{{details.total_unresolved}}</ion-note>
+  </ion-item>
+</ion-content>
