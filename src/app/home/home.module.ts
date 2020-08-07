@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { FilterPipe } from '../Pipe/filter.pipe';
 import { CovidDetailsComponent } from '../components/covid-details/covid-details.component';
+import { TimelineComponent } from '../components/timeline/timeline.component';
 
 
 @NgModule({
@@ -16,6 +17,6 @@ import { CovidDetailsComponent } from '../components/covid-details/covid-details
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,FilterPipe,CovidDetailsComponent]
+  declarations: [HomePage,FilterPipe,CovidDetailsComponent, TimelineComponent]
 })
 export class HomePageModule {}

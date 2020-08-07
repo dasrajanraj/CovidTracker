@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any, filterCountry : string): any {
-    console.log(filterCountry)
     if(filterCountry === undefined){
       return value;
     }

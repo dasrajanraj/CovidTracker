@@ -18,4 +18,9 @@ export class RequestService {
     .pipe(map((res:any)=> res['countrydata'][0]))
   }
 
+  onFetchCountryTimeline(countryCode){
+    return this.http.get(`https://api.thevirustracker.com/free-api?countryTimeline=${countryCode}`)
+    .pipe(map((res:any)=> res['timelineitems'][0]))
+  }
+
 }

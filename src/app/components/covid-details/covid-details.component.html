@@ -4,43 +4,61 @@
     <ion-back-button default-href></ion-back-button>
     </ion-buttons>
     <ion-title>
-      {{info.title}}
+      {{info.title}} 
     </ion-title>
+    <ion-subtitle class="ion-padding-end bold" slot="end">{{details.total_danger_rank}}<p class="ion-no-margin ion-no-padding f-10 red">Danger</p></ion-subtitle>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-item>
-    <ion-title>total_active_cases</ion-title>
-    <ion-note slot="end">{{details.total_active_cases}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_cases</ion-title>
-    <ion-note slot="end">{{details.total_cases}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_danger_rank</ion-title>
-    <ion-note slot="end">{{details.total_danger_rank}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_deaths</ion-title>
-    <ion-note slot="end">{{details.total_deaths}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_new_cases_today</ion-title>
-    <ion-note slot="end">{{details.total_new_cases_today}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_new_deaths_today</ion-title>
-    <ion-note slot="end">{{details.total_new_deaths_today}}</ion-note>
-  </ion-item>
-  <ion-item>
-    <ion-title>total_recovered</ion-title>
-    <ion-note slot="end">{{details.total_recovered}}</ion-note>
-  </ion-item>  <ion-item>
-    <ion-title>total_serious_cases</ion-title>
-    <ion-note slot="end">{{details.total_serious_cases}}</ion-note>
-  </ion-item>  <ion-item>
-    <ion-title>total_unresolved</ion-title>
-    <ion-note slot="end">{{details.total_unresolved}}</ion-note>
-  </ion-item>
+<ion-content class="">
+  <ion-row class="ion-no-padding ion-no-margin ion-padding-horizontal">
+    <ion-col class="ion-no-padding customPaddingRight" size="6">
+      <ion-card class="customMargin">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">{{details.total_new_cases_today}}</ion-card-title>
+          <ion-card-subtitle class="ion-text-center ion-text-capitalize">New Cases</ion-card-subtitle>
+        </ion-card-header>    
+      </ion-card>
+    </ion-col>
+    <ion-col class="ion-no-padding customPaddingLeft" size="6">
+      <ion-card class="customMargin">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">{{details.total_new_deaths_today}}</ion-card-title>
+          <ion-card-subtitle class="ion-text-center ion-text-capitalize">Death </ion-card-subtitle>
+        </ion-card-header>    
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-card class="ion-no-margin ion-margin-vertical ion-margin-horizontal">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{details.total_new_cases_today}}</ion-card-title>
+      <ion-card-subtitle class="ion-text-center ion-text-capitalize" >Total Unresolved</ion-card-subtitle>
+    </ion-card-header>    
+  </ion-card>
+  <div class="ion-padding-horizontal">
+    <ion-item class="ion-no-padding">
+      <ion-title class="ion-no-padding ion-text-start ion-text-capitalize">Total Active Cases</ion-title>
+      <ion-note class="ion-no-margin" slot="end">{{details.total_active_cases}}</ion-note>
+    </ion-item>
+  
+    <ion-item class="ion-no-padding">
+      <ion-title class="ion-no-padding ion-text-start ion-text-capitalize">total cases</ion-title>
+      <ion-note class="ion-no-margin" slot="end">{{details.total_cases}}</ion-note>
+    </ion-item>
+  
+    <ion-item class="ion-no-padding">
+      <ion-title class="ion-no-padding ion-text-start ion-text-capitalize">total deaths</ion-title>
+      <ion-note class="ion-no-margin" slot="end">{{details.total_deaths}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-title class="ion-no-padding ion-text-start ion-text-capitalize">total recovered</ion-title>
+      <ion-note class="ion-no-margin" slot="end">{{details.total_recovered}}</ion-note>
+    </ion-item>
+  
+  </div>
+    <div class="ion-margin-vertical">
+    <ng-template [ngComponentOutlet] = "timeLineComp | async"></ng-template>
+  </div>
+  <ion-row *ngIf="!timeLineComp" class="ion-justify-content-center ion-margin-vertical">
+    <ion-button (click)="LoadTimeline()" [ngClass]="" shape="round" fill="outline" color="primary" size="small">View TimeLine</ion-button>
+  </ion-row>
 </ion-content>
