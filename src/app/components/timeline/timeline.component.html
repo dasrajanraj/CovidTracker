@@ -1,0 +1,15 @@
+<ion-label class="ion-padding-horizontal ion-margin-bottom">Timeline</ion-label>
+
+<div class="timeline">
+    <div class="timeline-body">
+      <div *ngFor="let date of timeLine " class="timeline-item">
+        <div class="time">
+            <p>{{date.date}}</p>
+        </div>
+        <div class="content">
+          <h2 class="cases">Cases : {{date.new_daily_cases}}</h2>
+          <p class="dead" >Death : {{date.new_daily_deaths}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
